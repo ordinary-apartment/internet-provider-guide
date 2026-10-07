@@ -1,0 +1,21 @@
+{
+  "version": "2026-10-07.1",
+  "planning_headroom": 2,
+  "nominal_reserve_factor": 4,
+  "work_down": [0, 5, 4, 8, 200],
+  "work_up": [0, 1, 4, 8, 200],
+  "game_down": [0, 5, 5, 45],
+  "game_up": [0, 2, 2, 5],
+  "video_down": [0, 5, 15, 15],
+  "stream_up": [0, 8, 12],
+  "device_background": [2, 5, 10, 20],
+  "overkill_penalty": 18,
+  "managed_congestion_penalty": 18,
+  "sources": [
+    {"label":"Teams：会議・画面共有の帯域要件", "url":"https://learn.microsoft.com/en-us/microsoftteams/prepare-network"},
+    {"label":"Netflix：4K 15 Mbps以上", "url":"https://help.netflix.com/ja/node/306"},
+    {"label":"YouTube：ライブ配信のビットレート", "url":"https://support.google.com/youtube/answer/2853702?hl=ja"},
+    {"label":"NVIDIA：クラウドゲームの帯域・遅延要件", "url":"https://www.nvidia.com/ja-jp/geforce-now/system-reqs/"}
+  ],
+  "notes": "各社の推奨帯域を参考に、同時利用・2倍の余裕・公称値4倍の設計余裕を加えた独自の計画ルール。実測速度の推定や性能保証ではない。大容量ファイル200Mbpsは作業時間短縮の独自目安。FPSの帯域5Mbps、余裕係数・端末の背景通信量・同時利用係数は本サイトの明示的仮定。Ping・ジッター・パケットロスは公称速度から推定しない。"
+}

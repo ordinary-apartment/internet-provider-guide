@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>インターネットプロバイダー比較ガイド｜暮らしから選ぶインターネット回線</title>
+  <meta name="description" content="住所の入力なし。住まい・スマホ・使い方を選ぶと、通常料金と用途に合うインターネット回線をその場で比較できます。">
+  <meta name="theme-color" content="#006b6b">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23006b6b'/%3E%3Cpath d='M10 26h20M10 19h14M10 12h7' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css?v=3e4ce10e3aac">
+</head>
+<body>
+<a class="skip" href="#results">比較結果へ</a>
+<header class="topbar"><div class="brand"><span class="brandmark" aria-hidden="true">≋</span><span>インターネットプロバイダー比較ガイド<span id="catalog-summary" class="brand-small">318プラン掲載</span></span></div><nav class="header-nav" aria-label="メイン"><a href="columns/index.html">コラム</a><button id="method-button" class="text-button">選び方の基準</button></nav></header>
+<main>
+  <div class="workspace">
+    <aside class="filters" aria-label="生活条件">
+      <div class="filter-top"><h2>あなたの条件</h2><button id="reset" class="text-button">リセット</button></div>
+      <div id="basic-fields"></div>
+      <details class="use-details" open><summary>使い方と優先するもの<span id="usage-summary"></span></summary><div id="usage-fields"></div></details>
+      <details class="discount-details"><summary>スマホ割も試算する<span>任意</span></summary><p class="small">対象スマホプランと必要オプションを確認できる場合の上限試算です。人数から自動推定しません。</p><div id="discount-fields"></div></details>
+      <p class="filter-note">条件はこの画面だけで使います。住所による提供可否は、各社公式で確認できます。</p>
+    </aside>
+    <section id="results" class="results" aria-label="回線の比較結果" tabindex="-1">
+      <div class="tabbar" role="tablist" aria-label="回線の種類"><button id="fixed-tab" class="tab active" role="tab" aria-selected="true" aria-controls="comparison-panel">光回線・固定回線</button><button id="wireless-tab" class="tab" role="tab" aria-selected="false" aria-controls="comparison-panel">ホームルーター</button></div>
+      <div id="comparison-panel" role="tabpanel" aria-labelledby="fixed-tab">
+        <div id="recommendation" class="hidden" aria-live="polite"></div>
+        <div class="result-toolbar"><div><h2 id="result-title">比較結果</h2><p id="count" aria-live="polite"></p></div><a class="download" href="data/plans.csv" download="インターネット回線.csv"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></svg>CSV</a></div>
+        <fieldset id="speed-filter" class="field speed-filter"><legend>下り最大速度</legend><div id="speed-options" class="options"></div></fieldset>
+        <div id="compare-note" class="compare-note">通常月額は税込。最大速度は技術規格の値で、実測速度ではありません。</div>
+        <p class="scroll-hint">表は横にスクロールできます。サービス名を押すと詳細が開きます。</p>
+        <div id="table-container" class="table-scroll" role="region" aria-label="比較表" tabindex="0"><table><caption class="sr-only">通常料金・最大速度・用途適合の比較</caption><thead><tr><th scope="col" class="service-col">候補 / プラン</th><th scope="col">通常月額<span>必須費用込み</span></th><th scope="col">最大速度<span>下り / 上り</span></th><th scope="col">スマホ割</th><th scope="col">用途の目安<span>短い判定</span></th><th scope="col">確認・申込</th></tr></thead><tbody id="ranked-body"></tbody></table></div>
+        <div id="empty" class="empty hidden"></div>
+        <details id="pending" class="pending"><summary><span>確認が必要な候補</span><span id="pending-count"></span></summary><div class="table-scroll"><table><caption class="sr-only">未確認の候補</caption><thead><tr><th scope="col">サービス / プラン</th><th scope="col">通常料金</th><th scope="col">確認が必要な点</th><th scope="col">公式確認</th></tr></thead><tbody id="pending-body"></tbody></table></div></details>
+        <footer class="data-footer"><div><span class="footer-label">データの確認日</span><strong>2026.10.07</strong><span id="coverage"></span></div></footer>
+      </div>
+    </section>
+  </div>
+
+</main>
+<dialog id="info-dialog" aria-labelledby="dialog-title"><div class="dialog-head"><h2 id="dialog-title">選び方の基準</h2><button id="close-dialog" aria-label="閉じる">×</button></div><div id="dialog-content"></div></dialog>
+<noscript><p>条件による比較にはJavaScriptを有効にしてください。<a href="data/plans.csv">料金CSVをダウンロード</a>できます。</p></noscript>
+<script type="module" src="app.mjs"></script>
+</body></html>
