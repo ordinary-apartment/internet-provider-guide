@@ -22,3 +22,19 @@
 @media(max-width:760px){.topbar .header-nav{gap:18px;flex-wrap:wrap}.topbar .header-nav>a,.topbar .header-nav>button{padding:10px 14px;font-size:.75rem}}
 
 .speed-filter{margin:18px 0}.speed-filter legend{font-size:.85rem;color:var(--muted);margin-bottom:10px}.speed-filter .options{display:flex;flex-wrap:wrap;gap:8px}.speed-filter .option{min-width:64px;min-height:44px}
+
+/* Results fit the viewport; narrow screens use labelled cards. */
+.comparison{min-width:0}.table-scroll{overflow:visible}#table-container table,.pending table{width:100%;min-width:0;table-layout:fixed}#table-container td,.pending td{overflow-wrap:anywhere}#table-container .service-col{width:24%;min-width:0}.scroll-hint{display:none!important}
+@media(max-width:1200px){
+ #table-container,.pending .table-scroll{border:0;background:transparent;box-shadow:none}
+ #table-container table,.pending table,#ranked-body,#pending-body{display:block;width:100%;min-width:0}
+ #table-container thead,.pending thead{display:none}
+ #ranked-body>tr:not(.detail-row),#pending-body>tr:not(.detail-row){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;background:white;border:1px solid var(--line);border-radius:12px;margin-bottom:16px;overflow:hidden}
+ #table-container tr:not(.detail-row)>td,.pending tr:not(.detail-row)>td{display:block;min-width:0;padding:14px 16px;border:0;border-top:1px solid var(--line);position:static!important;box-shadow:none!important}
+ #table-container tr:not(.detail-row)>td:first-child,.pending tr:not(.detail-row)>td:first-child{grid-column:1/-1;border-top:0}
+ #table-container tr:not(.detail-row)>td:last-child,.pending tr:not(.detail-row)>td:last-child{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+ #table-container tr:not(.detail-row)>td:not(:first-child)::before,.pending tr:not(.detail-row)>td:not(:first-child)::before{content:attr(data-label);display:block;color:var(--muted);font-size:.75rem;font-weight:600;margin-bottom:8px}
+ #table-container tr:not(.detail-row)>td:last-child::before,.pending tr:not(.detail-row)>td:last-child::before{flex-basis:100%;margin-bottom:0}
+ .service-name{font-size:1rem}.plan{line-height:1.8}.fee{font-size:1.4rem}.detail-row{display:block;margin:-8px 0 16px}.detail-row>td{display:block;width:100%;border:1px solid var(--line);border-radius:12px}.detail-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.detail-grid dd,.detail-note{overflow-wrap:anywhere}.pending[open]{background:transparent}.pending>summary{background:white}
+}
+@media(max-width:380px){.detail-grid{grid-template-columns:1fr}#table-container tr:not(.detail-row)>td,.pending tr:not(.detail-row)>td{padding:12px}.fee{font-size:1.2rem}}
